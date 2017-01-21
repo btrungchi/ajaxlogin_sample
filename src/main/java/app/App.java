@@ -24,6 +24,10 @@ public class App
         String email = request.queryParams("email");
         String password = request.queryParams("password");
 
+        if (email == null || password == null) {
+            return Utils.sendJsonContent(request, response, loginResult);
+        }
+        
         loginResult.put("email", email);
 
         // Check valid account
