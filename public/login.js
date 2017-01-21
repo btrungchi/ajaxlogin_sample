@@ -19,6 +19,9 @@ $(document).ready(function(){
               } else {
                 $("#result").html("Wrong email/password");
               }
+            },
+            error: function(jqXHR, exception) {
+                $("#result").html(exception);
             }
             });
             return false;
