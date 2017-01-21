@@ -8,7 +8,10 @@ $(document).ready(function(){
             $.ajax({
             type: "POST",
             url: "/login",
-            data: "email="+email+"&password="+password,
+            data: {
+              email: email,
+              password: password
+            },            
             success: function(jsonData){
               console.log(jsonData);              
               email = jsonData.email;
