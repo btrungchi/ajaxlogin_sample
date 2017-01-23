@@ -1,7 +1,7 @@
 $(document).ready(function(){
    $("#login").click(function(){  
-        email=$("#email").val();
-        password=$("#password").val();
+        var email=$("#email").val();
+        var password=$("#password").val();
         if(email=='' || password==''){
           $("#result").html("Please fill in both your email and password");
         } else {
@@ -14,8 +14,8 @@ $(document).ready(function(){
             },            
             success: function(jsonData){
               console.log(jsonData);              
-              email = jsonData.email;
-              loginSuccess = jsonData.loginSuccess;
+              var email = jsonData.email;
+              var loginSuccess = jsonData.loginSuccess;
 
               if (email && loginSuccess == "Yes") {
                 $("#result").html(email + " login successed");
